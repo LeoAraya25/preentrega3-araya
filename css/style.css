@@ -61,5 +61,25 @@ body {
     max-width: 100%;
     height: auto;
   }
+  /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  
+    /* Estilos específicos para pantallas más pequeñas */
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+      /* Otros estilos específicos para pantallas más pequeñas */
+    }
+
+    /* Estilos específicos para pantallas más grandes */
+    @media (min-width: 1200px) {
+      body {
+        font-size: 18px;
+      }
+      /* Otros estilos específicos para pantallas más grandes */
+    }
