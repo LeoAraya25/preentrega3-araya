@@ -102,11 +102,11 @@ body {
     }
     
     .social-icons a {
-      margin-right: 10px; /* Ajusta el espaciado entre los íconos */
+      margin-right: 10px; 
     }
     
     .social-icons i {
-      font-size: 30px; /* Ajusta el tamaño de los íconos según tus necesidades */
+      font-size: 30px; 
     }
 
     .title {
