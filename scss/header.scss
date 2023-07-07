@@ -1,0 +1,22 @@
+.header {
+    background-color: $secondary-color !important;
+    display: flex;
+  
+    h1 {
+      color: $primary-color;
+    }
+  
+    .ul-header {
+      display: flex;
+      list-style: none;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+  
+      li {
+        margin: 0 10px;
+        text-decoration: none;
+      }
+    }
+  }
+  
