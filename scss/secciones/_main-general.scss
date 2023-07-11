@@ -6,7 +6,6 @@
   
     .parrafo {
       font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
     }
 
 
@@ -16,8 +15,11 @@
 .header h1 {
       color: #0529c7; }
     
-.parrafo {
-        font-family: Arial, Helvetica, sans-serif; }
+.parrafo p {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: justify;
+        margin-left: 15px;
+        margin-right: 15px; }
         img {
           max-width: 100%;
           height: auto;
@@ -125,7 +127,10 @@ ul {
 }
 
 .parrafo {
-  font-family: 'Times New Roman', Times, serif; }
+  font-family: 'Times New Roman', Times, serif; 
+  text-align: justify;
+  margin-left: 15px;
+  margin-right: 15px;}
 
   .dotted-border {
 border: 1px dotted #c5be02;
@@ -144,9 +149,9 @@ color: blueviolet;
 }
 
 .centered-text {
-  text-align: center;
+  text-align: justify;
+  font-size: 20px;
 }
-
 
 }  
 
