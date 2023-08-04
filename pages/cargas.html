@@ -10,6 +10,12 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simulador de Operaciones">
+    <title>Simulador de Operaciones</title>
+    <link rel="stylesheet" href="../scss/secciones/_main-general.scss">
     <title>Glofre Co - Tipos de Cargas e Incoterms</title>
 </head>
 <body>
@@ -40,6 +46,44 @@
         </div>
       </nav>
 </header>
+<div class="container"></div>
+<h1>Simulador de Operaciones</h1>
+  <div>
+    <label for="containerSize">Tamaño del contenedor:</label>
+    <select id="containerSize">
+      <option value="20">20 pies (Costo: U$S1000)</option>
+      <option value="40">40 pies (Costo: U$S2000)</option>
+    </select>
+  </div>
+  <div>
+    <label for="destination">Destino:</label>
+    <select id="destination">
+      <option value="China">China (Costo: U$S900)</option>
+      <option value="Estados Unidos">Estados Unidos (Costo: U$S800)</option>
+      <option value="Reino Unido">Reino Unido (Costo: U$S900)</option>
+      <option value="España">España (Costo: U$S700)</option>
+      <option value="Chile">Chile (Costo: U$S400)</option>
+      <option value="Brasil">Brasil (Costo: U$S450)</option>
+    </select>
+  </div>
+  <div>
+    <label for="cantidadContenedores">Cantidad de contenedores:</label>
+    <input type="number" id="cantidadContenedores" value="1" min="1">
+  </div>
+  
+  <button id="calculateBtn">Agregar a la operacion</button>
+
+  <h2>Presupuesto de operacion</h2>
+  <ul id="cartItems"></ul>
+
+  <p>Total: U$S<span id="totalCost">0</span></p>
+
+  <button id="checkoutBtn">Finalizar Operacion</button></div>
+
+<script src="../stock.js"></script>
+<script src="../app.js"></script>
+<script src="../order.js"></script>
+<script src="../main.js"></script>
     
 
     <main class="main">
