@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pedido.agregarItem(destino, tamanoContenedor, cantidadContenedores, costoTotalConCantidad);
   
     actualizarCarrito();
-    mostrarPrecioTotal(); // Nueva función agregada para mostrar el precio total
+    mostrarPrecioTotal(); 
   }
   
   function mostrarPrecioTotal() {
