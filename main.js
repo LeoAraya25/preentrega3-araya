@@ -48,15 +48,15 @@ function manejarCalcular() {
 }
 
 
-function manejarFinalizarCompra() {
-  if (pedido.items.length === 0) {
-    alert('Su operación se encuentra incompleta. Agregue elementos antes de finalizar su operación.');
-  } else {
-    alert('Su operación ya se encuentra en proceso. En breve recibirá un correo con indicaciones administrativas para dar curso al pago.');
-    pedido.limpiar();
-    actualizarCarrito();
-  }
-}
+//function manejarFinalizarCompra() {
+//  if (pedido.items.length === 0) {
+//    alert('Su operación se encuentra incompleta. Agregue elementos antes de finalizar su operación.');
+//  } else {
+//    alert('Su operación ya se encuentra en proceso. En breve recibirá un correo con indicaciones administrativas para dar curso al pago.');
+//    pedido.limpiar();
+//    actualizarCarrito();
+//  }
+// }
 
 function actualizarCarrito() {
   const carritoElemento = document.getElementById('cartItems');

@@ -100,4 +100,32 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
+
+  function cargarUsuarios() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(data => {
+        console.log("Usuarios cargados:", data);
+      })
+      .catch(error => {
+        console.error("Error al cargar usuarios:", error);
+      });
+  }
+
+  const cargarUsuariosBtn = document.getElementById("cargarUsuariosBtn");
+  cargarUsuariosBtn.addEventListener("click", cargarUsuarios);
+
+  function cargarDatosDesdeJSON() {
+    fetch("data.json")
+      .then(response => response.json())
+      .then(data => {
+        console.log("Datos desde JSON local:", data);
+      })
+      .catch(error => {
+        console.error("Error al cargar datos desde JSON local:", error);
+      });
+  }
+
+  const cargarDatosBtn = document.getElementById("cargarDatosBtn");
+  cargarDatosBtn.addEventListener("click", cargarDatosDesdeJSON);
 });
