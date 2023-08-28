@@ -1,144 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Glofre Co - Sitio web de carga y transporte internacional">
-    <meta name="keywords" content="Glofre Co, carga, transporte, internacional, incoterms">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Glofre Co - Sitio web de carga y transporte internacional">
+  <meta name="keywords" content="Glofre Co, carga, transporte, internacional, incoterms">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Simulador de Operaciones">
-    <title>Simulador de Operaciones virtual</title>
-    <link rel="stylesheet" href="../scss/secciones/_main-general.scss">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Glofre Co - Tipos de Cargas e Incoterms</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simulador de Operaciones">
+  <title>Simulador de Operaciones virtual</title>
+  <link rel="stylesheet" href="../scss/secciones/_main-general.scss">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <title>Glofre Co - Tipos de Cargas e Incoterms</title>
 </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">GLOFRE CO</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../index.html">INICIO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./cargas.html">CARGAS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./clientes.html">CLIENTES</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./seguimiento.html">SEGUIMIENTO</a>
-              </li>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">GLOFRE CO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html">INICIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./cargas.html">CARGAS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./clientes.html">CLIENTES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./seguimiento.html">SEGUIMIENTO</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Simulador de Operaciones</h1>
+    <div>
+      <label for="containerSize">Tamaño del contenedor:</label>
+      <select id="containerSize">
+        <option value="20">20 pies (Costo: U$S1000)</option>
+        <option value="40">40 pies (Costo: U$S2000)</option>
+      </select>
+    </div>
+    <div>
+      <label for="destination">Destino:</label>
+      <select id="destination">
+        <option value="China">China (Costo: U$S900)</option>
+        <option value="Estados Unidos">Estados Unidos (Costo: U$S800)</option>
+        <option value="Reino Unido">Reino Unido (Costo: U$S900)</option>
+        <option value="España">España (Costo: U$S700)</option>
+        <option value="Chile">Chile (Costo: U$S400)</option>
+        <option value="Brasil">Brasil (Costo: U$S450)</option>
+      </select>
+    </div>
+    <div>
+      <label for="cantidadContenedores">Cantidad de contenedores:</label>
+      <input type="number" id="cantidadContenedores" value="1" min="1">
+    </div>
+
+    <button id="calculateBtn">Agregar a la operacion</button>
+
+    <h2>Presupuesto de operacion</h2>
+    <ul id="cartItems"></ul>
+    <p>Total: U$S<span id="totalCost">0</span></p>
+
+    <button id="checkoutBtn">Finalizar Operacion</button>
+    <button id="clearCartBtn">Vaciar Carrito</button>
+  </div>
+
+  <main class="main">
+    <h1 class="title">TIPOS DE CARGAS E INCOTERMS</h1>
+    <div class="container">
+      <div class="text">
+        <div class="container">
+          <div class="text">
+            <h2>Tipos de Incoterms</h2>
+            <ol>
+              <li>EXW (Ex Works)</li>
+              <li>FCA (Free Carrier)</li>
+              <li>CIF (Cost, Insurance, and Freight)</li>
+              <li>DAP (Delivered at Place)</li>
+              <li>FOB (Free on Board)</li>
+              <li>CIP (Carriage and Insurance Paid To)</li>
+            </ol>
         
+            <h2>Tipos de cargas</h2>
+            <ul>
+              <li>Carga a granel (Bulk)</li>
+              <li>Carga general (General Cargo)</li>
+              <li>Carga a granel líquida (Liquid Bulk)</li>
+              <li>Carga a granel seca (Dry Bulk)</li>
+              <li>Carga refrigerada (Refrigerated Cargo)</li>
             </ul>
           </div>
         </div>
-      </nav>
-  </header>
-<div class="container"></div>
-<h1>Simulador de Operaciones</h1>
-  <div>
-    <label for="containerSize">Tamaño del contenedor:</label>
-    <select id="containerSize">
-      <option value="20">20 pies (Costo: U$S1000)</option>
-      <option value="40">40 pies (Costo: U$S2000)</option>
-    </select>
-  </div>
-  <div>
-    <label for="destination">Destino:</label>
-    <select id="destination">
-      <option value="China">China (Costo: U$S900)</option>
-      <option value="Estados Unidos">Estados Unidos (Costo: U$S800)</option>
-      <option value="Reino Unido">Reino Unido (Costo: U$S900)</option>
-      <option value="España">España (Costo: U$S700)</option>
-      <option value="Chile">Chile (Costo: U$S400)</option>
-      <option value="Brasil">Brasil (Costo: U$S450)</option>
-    </select>
-  </div>
-  <div>
-    <label for="cantidadContenedores">Cantidad de contenedores:</label>
-    <input type="number" id="cantidadContenedores" value="1" min="1">
-  </div>
-  
-  <button id="calculateBtn">Agregar a la operacion</button>
-
-  <h2>Presupuesto de operacion</h2>
-  <ul id="cartItems"></ul>
-
-  <p>Total: U$S<span id="totalCost">0</span></p>
-
-  <button id="checkoutBtn">Finalizar Operacion</button></div><button id="clearCartBtn">Vaciar Carrito</button>
- 
-
-
-<script src="../stock.js"></script>
-<script src="../app.js"></script>
-<script src="../order.js"></script>
-<script src="../main.js"></script>
-    
-
-    <main class="main">
-      <h1 class="title">TIPOS DE CARGAS E INCOTERMS</h1>
-<div class="container">
-  <div class="text">
-    <div class="container">
-      <div class="text">
-        <h2>Tipos de Incoterms</h2>
-        <ol>
-          <li>EXW (Ex Works)</li>
-          <li>FCA (Free Carrier)</li>
-          <li>CIF (Cost, Insurance, and Freight)</li>
-          <li>DAP (Delivered at Place)</li>
-          <li>FOB (Free on Board)</li>
-          <li>CIP (Carriage and Insurance Paid To)</li>
-        </ol>
-    
-        <h2>Tipos de cargas</h2>
-        <ul>
-          <li>Carga a granel (Bulk)</li>
-          <li>Carga general (General Cargo)</li>
-          <li>Carga a granel líquida (Liquid Bulk)</li>
-          <li>Carga a granel seca (Dry Bulk)</li>
-          <li>Carga refrigerada (Refrigerated Cargo)</li>
-        </ul>
+      </div>
+      <div class="image">
+        <img src="../images/contenedores-img.jpg">
       </div>
     </div>
-    
-    
-  </div>
-  <div class="image">
-    <img src="../images/contenedores-img.jpg">
-  </div>
-</div>
-<div class="subtituloc"><h1>NUESTRA RESPONSABILIDADES CON LAS CARGAS</h1></div>
-<div class="parrafo"><h2> En cuanto a las condiciones de transporte, en Glofre Co nos aseguraremos de seleccionar el medio de transporte adecuado para la carga en cuestión. Esto puede implicar el uso de transporte marítimo, aéreo, terrestre o multimodal, dependiendo de las necesidades del cliente y las regulaciones locales. Además, nos aseguraremos de coordinar la logística de transporte, incluyendo la reserva de espacios en barcos, aviones o camiones, y asegurarse de que se cumplan los requisitos de embalaje, etiquetado y manipulación de la carga.
-
-  En lo que respecta a la documentación, seremos responsables de asegurarnos de que todos los documentos necesarios e indispensables estén en orden. Esto puede incluir la preparación de facturas comerciales, listas de empaque, documentos de transporte como el conocimiento de embarque (bill of lading) o el conocimiento aéreo (air waybill), certificados de origen, permisos aduaneros, entre otros. También respoderemos por las regulaciones y requisitos aduaneros y de importación/exportación de los países involucrados, para evitar demoras o problemas en el despacho aduanero.</h2>
-
-
+    <div class="subtituloc">
+      <h1>NUESTRA RESPONSABILIDADES CON LAS CARGAS</h1>
+    </div>
+    <div class="parrafo">
+      <h2>En cuanto a las condiciones de transporte...</h2>
+    </div>
+  </main>
 
   <footer class="footer">
     <div class="social-icons">
       <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
   </footer>
+
+  <button id="cargarUsuariosBtn">Cargar Usuarios</button>
+  <button id="cargarDatosBtn">Cargar Datos desde JSON</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cargarUsuariosBtn = document.getElementById("cargarUsuariosBtn");
+      cargarUsuariosBtn.addEventListener("click", cargarUsuarios);
+
+      function cargarUsuarios() {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then(response => response.json())
+          .then(data => {
+            console.log("Usuarios cargados:", data);
+          })
+          .catch(error => {
+            console.error("Error al cargar usuarios:", error);
+          });
+      }
+
+      const cargarDatosBtn = document.getElementById("cargarDatosBtn");
+      cargarDatosBtn.addEventListener("click", cargarDatosDesdeJSON);
+
+      function cargarDatosDesdeJSON() {
+        fetch("data.json")
+          .then(response => response.json())
+          .then(data => {
+            console.log("Datos desde JSON local:", data);
+          })
+          .catch(error => {
+            console.error("Error al cargar datos desde JSON local:", error);
+          });
+      }
+    });
+  </script>
+  <script src="../app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+          integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+          crossorigin="anonymous"></script>
 </body>
 </html>

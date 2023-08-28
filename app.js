@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     totalCostElement.textContent = totalCost.toFixed(2);
   }
 
-  function updateCartItems() {
+  function actualizarCarrito() {
     cartItemsList.innerHTML = "";
     cart.forEach((item, index) => {
       const li = document.createElement("li");
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       removeButton.textContent = "Eliminar";
       removeButton.addEventListener("click", () => {
         cart.splice(index, 1);
-        updateCartItems();
+        actualizarCarrito();
         updateTotalCost();
       });
       li.appendChild(removeButton);
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     cart.push(item);
-    updateCartItems();
+    actualizarCarrito();
     updateTotalCost();
 
     Swal.fire({
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   clearCartButton.addEventListener("click", () => {
     cart.length = 0;
-    updateCartItems();
+    actualizarCarrito();
     updateTotalCost();
   });
 
@@ -95,37 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
         text: `Se ha finalizado la operación con un costo total de U$S${totalCostElement.textContent}.`,
       }).then(() => {
         cart.length = 0;
-        updateCartItems();
+        actualizarCarrito();
         updateTotalCost();
       });
     }
   });
-
-  function cargarUsuarios() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(response => response.json())
-      .then(data => {
-        console.log("Usuarios cargados:", data);
-      })
-      .catch(error => {
-        console.error("Error al cargar usuarios:", error);
-      });
-  }
-
-  const cargarUsuariosBtn = document.getElementById("cargarUsuariosBtn");
-  cargarUsuariosBtn.addEventListener("click", cargarUsuarios);
-
-  function cargarDatosDesdeJSON() {
-    fetch("data.json")
-      .then(response => response.json())
-      .then(data => {
-        console.log("Datos desde JSON local:", data);
-      })
-      .catch(error => {
-        console.error("Error al cargar datos desde JSON local:", error);
-      });
-  }
-
-  const cargarDatosBtn = document.getElementById("cargarDatosBtn");
-  cargarDatosBtn.addEventListener("click", cargarDatosDesdeJSON);
 });

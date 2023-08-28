@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const calcularBtn = document.getElementById('calculateBtn');
   calcularBtn.addEventListener('click', manejarCalcular);
@@ -79,3 +78,18 @@ function actualizarCarrito() {
   const totalCostoElemento = document.getElementById('totalCost');
   totalCostoElemento.textContent = pedido.obtenerCostoTotal();
 }
+
+function cargarDatosDesdeJSON() {
+  fetch("data.json")
+    .then(response => response.json())
+    .then(data => {
+      console.log("Datos desde JSON local:", data);
+    })
+    .catch(error => {
+      console.error("Error al cargar datos desde JSON local:", error);
+    });
+}
+
+const cargarDatosBtn = document.getElementById("cargarDatosBtn");
+cargarDatosBtn.addEventListener("click", cargarDatosDesdeJSON);
+
